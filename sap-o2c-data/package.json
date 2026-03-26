@@ -1,0 +1,9 @@
+{
+  "name": "sap-o2c-context-graph",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Order-to-cash context graph with grounded chat over SAP-style JSONL data",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

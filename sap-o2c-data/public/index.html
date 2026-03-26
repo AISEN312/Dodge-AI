@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O2C Context Graph</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Context Graph / Order to Cash</p>
+          <h1>Explore connected sales, delivery, billing, journal, and payment flows.</h1>
+          <p class="subtle">
+            Grounded answers only. Every chat response is backed by the loaded SAP-style dataset.
+          </p>
+        </div>
+        <div id="metrics" class="metrics"></div>
+      </header>
+
+      <main class="workspace">
+        <section class="graph-panel card">
+          <div class="panel-header">
+            <div>
+              <h2>Graph Explorer</h2>
+              <p id="graph-caption">Loading graph neighborhood...</p>
+            </div>
+            <div class="panel-actions">
+              <input id="search-input" type="text" placeholder="Search order, billing, product..." />
+              <button id="search-button">Find</button>
+              <button id="reset-button">Reset View</button>
+            </div>
+          </div>
+          <canvas id="graph-canvas" width="980" height="640"></canvas>
+          <div id="search-results" class="search-results hidden"></div>
+        </section>
+
+        <aside class="side-panel">
+          <section class="card inspector">
+            <div class="panel-header">
+              <div>
+                <h2>Inspector</h2>
+                <p>Expand a node or use a chat result to focus the graph.</p>
+              </div>
+            </div>
+            <div id="node-details" class="details empty">Select a node to inspect its metadata.</div>
+          </section>
+
+          <section class="card chat-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Chat with Graph</h2>
+                <p>Ask grounded questions about the order-to-cash dataset.</p>
+              </div>
+            </div>
+            <div id="messages" class="messages"></div>
+            <div class="composer">
+              <textarea id="chat-input" rows="4" placeholder="Trace billing document 90504248"></textarea>
+              <div class="composer-row">
+                <button id="sample-button" class="ghost">Use Example</button>
+                <button id="send-button">Send</button>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>
